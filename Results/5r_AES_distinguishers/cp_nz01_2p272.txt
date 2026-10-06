@@ -1,0 +1,4 @@
+AES cp_nz01: s0=12515 s1=111 s2=111 N=154197315(2^27.20) rounds=5 trials=300
+  n_z=0: P_find=194/300=0.6467 mean=1.0133
+  n_z=1: P_find=191/300=0.6367 mean=1.3100
+ALL_DONE

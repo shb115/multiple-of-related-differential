@@ -1,0 +1,10 @@
+=== ACP CLEAN (2-active) T=300 seed 2024 ===
+-- D=2^22 --
+ACP nz=1 D=2^22.00 rounds=5 trials=300 : P_find=96/300=0.3200 mean=0.3967 data~2^22.000
+ACP nz=0 D=2^22.00 rounds=5 trials=300 : P_find=72/300=0.2400 mean=0.2633 data~2^22.000
+ACP nz=2 D=2^22.00 rounds=5 trials=300 : P_find=0/300=0.0000 mean=0.0000 data~2^22.000
+-- D=2^23.32 --
+ACP nz=1 D=2^23.32 rounds=5 trials=300 : P_find=178/300=0.5933 mean=0.9533 data~2^23.320
+ACP nz=0 D=2^23.32 rounds=5 trials=300 : P_find=151/300=0.5033 mean=0.6933 data~2^23.320
+ACP nz=2 D=2^23.32 rounds=5 trials=300 : P_find=2/300=0.0067 mean=0.0067 data~2^23.320
+ALL_DONE

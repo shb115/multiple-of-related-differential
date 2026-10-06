@@ -1,0 +1,37 @@
+# Compiled binaries
+Codes/5r_small_AES/count_quartets_nz0
+Codes/5r_small_AES/count_quartets_nz1
+Codes/5r_small_AES/count_quartets_nz2
+Codes/5r_AES_N32/count_quartets_nz2
+Codes/5r_AES_N32/count_quartets_nz1
+Codes/5r_AES_N32/count_quartets_nz0
+*.exe
+Codes/5r_AES_distinguishers/cp_nz01
+Codes/5r_AES_distinguishers/cp_nz2
+Codes/5r_AES_distinguishers/acp_all
+Codes/5r_AES_distinguishers/cp_nz012
+Codes/5r_AES_distinguishers/cp_nz012f
+Codes/5r_AES_distinguishers/cp_nz012_m*
+Codes/table2_search/lemma7_search
+
+# Object files
+*.o
+*.obj
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Backups
+*.bak
+
+# Script outputs written to the working directory (compare with Results/expected_count/)
+Codes/expected_count/table3_w*.json
+Codes/expected_count/table5_w*.json
+# default raw files of the N32 count programs and run_all.sh output with the default out_dir
+raw_counts_*.txt
+results_mode*.txt
+!Results/table2_search/results_mode*.txt
+# redirected outputs of the README commands run in Codes/5r_AES_distinguishers
+# (cp_nz01_2p27.txt, <group>_t<k>.txt, verify_*.txt, ...)
+Codes/5r_AES_distinguishers/*.txt

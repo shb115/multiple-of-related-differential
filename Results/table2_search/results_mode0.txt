@@ -1,0 +1,348 @@
+=== w=4 poly=0x13 mode=0 (exactly one zero per byte) ===
+field check: OK (every nonzero row of the mult table is a permutation)
+Table 2 dy=MC(dx), dy'=MC(dx') reproduced in this field: YES
+reference set (Table 2 rows x rot_k x 6 orderings, normalized, deduplicated): 72 ordered pairs
+normalized candidates tested: 263250 ; normalized solutions (ordered (u,v), eta_first=1): 72
+=> ordered (u,v) solutions in total = 72 x (2^w-1) = 1080
+scalar-orbit check (every tau*(u,v) is a solution; orbit size 2^w-1): OK
+(i) solutions outside {tau*rot_k(row)} : 0 ; reference pairs not found by search: 0 ; set equality: YES
+number of classes Z(D): 5
+class Z = {{}, {0,1}, {2,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 90 ; /6 (unordered triples = Lemma 7 count): 15 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,1}: 2 -> 3  {2,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D4)
+class Z = {{}, {0,2}, {1,3}}
+   normalized ordered pairs: 24 ; ordered (u,v) pairs total: 360 ; /6 (unordered triples = Lemma 7 count): 60 = 4 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,2}: 2 -> 3  {1,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot2(D2) rot3(D2) rot0(D2) rot1(D2)
+class Z = {{0}, {2}, {1,3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 270 ; /6 (unordered triples = Lemma 7 count): 45 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {0}: 3 -> 2  {2}: 3 -> 2  {1,3}: 2 -> 4   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D3) rot0(D1) rot2(D1)
+class Z = {{}, {1,2}, {0,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 90 ; /6 (unordered triples = Lemma 7 count): 15 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {1,2}: 2 -> 3  {0,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D4)
+class Z = {{1}, {0,2}, {3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 270 ; /6 (unordered triples = Lemma 7 count): 45 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {1}: 3 -> 2  {0,2}: 2 -> 4  {3}: 3 -> 2   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D3) rot3(D1) rot1(D1)
+(a) per ordered zero-set assignment (Z(u),Z(v)) [Z(u+v) determined]: count of ordered (u,v) pairs
+   Z(u)={} Z(v)={0,1} : 15 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,2} : 60 = 4 x (2^w-1)
+   Z(u)={} Z(v)={1,2} : 15 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,3} : 15 = 1 x (2^w-1)
+   Z(u)={} Z(v)={1,3} : 60 = 4 x (2^w-1)
+   Z(u)={} Z(v)={2,3} : 15 = 1 x (2^w-1)
+   Z(u)={0} Z(v)={2} : 45 = 3 x (2^w-1)
+   Z(u)={0} Z(v)={1,3} : 45 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={0,2} : 45 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={3} : 45 = 3 x (2^w-1)
+   Z(u)={0,1} Z(v)={} : 15 = 1 x (2^w-1)
+   Z(u)={0,1} Z(v)={2,3} : 15 = 1 x (2^w-1)
+   Z(u)={2} Z(v)={0} : 45 = 3 x (2^w-1)
+   Z(u)={2} Z(v)={1,3} : 45 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={} : 60 = 4 x (2^w-1)
+   Z(u)={0,2} Z(v)={1} : 45 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={3} : 45 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={1,3} : 60 = 4 x (2^w-1)
+   Z(u)={1,2} Z(v)={} : 15 = 1 x (2^w-1)
+   Z(u)={1,2} Z(v)={0,3} : 15 = 1 x (2^w-1)
+   Z(u)={3} Z(v)={1} : 45 = 3 x (2^w-1)
+   Z(u)={3} Z(v)={0,2} : 45 = 3 x (2^w-1)
+   Z(u)={0,3} Z(v)={} : 15 = 1 x (2^w-1)
+   Z(u)={0,3} Z(v)={1,2} : 15 = 1 x (2^w-1)
+   Z(u)={1,3} Z(v)={} : 60 = 4 x (2^w-1)
+   Z(u)={1,3} Z(v)={0} : 45 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={2} : 45 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={0,2} : 60 = 4 x (2^w-1)
+   Z(u)={2,3} Z(v)={} : 15 = 1 x (2^w-1)
+   Z(u)={2,3} Z(v)={0,1} : 15 = 1 x (2^w-1)
+   number of ordered zero-set assignments with solutions: 30
+RAW (no normalization) ordered (u,v) solutions: 1080 ; matches normalized x (2^w-1): YES
+search time: 0.00 s ; total time: 0.05 s
+
+wall 0.05 s, maxrss 1440 KB
+=== w=5 poly=0x25 mode=0 (exactly one zero per byte) ===
+field check: OK (every nonzero row of the mult table is a permutation)
+Table 2 dy=MC(dx), dy'=MC(dx') reproduced in this field: YES
+reference set (Table 2 rows x rot_k x 6 orderings, normalized, deduplicated): 72 ordered pairs
+normalized candidates tested: 2323698 ; normalized solutions (ordered (u,v), eta_first=1): 72
+=> ordered (u,v) solutions in total = 72 x (2^w-1) = 2232
+scalar-orbit check (every tau*(u,v) is a solution; orbit size 2^w-1): OK
+(i) solutions outside {tau*rot_k(row)} : 0 ; reference pairs not found by search: 0 ; set equality: YES
+number of classes Z(D): 5
+class Z = {{}, {0,1}, {2,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 186 ; /6 (unordered triples = Lemma 7 count): 31 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,1}: 2 -> 3  {2,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D4)
+class Z = {{}, {0,2}, {1,3}}
+   normalized ordered pairs: 24 ; ordered (u,v) pairs total: 744 ; /6 (unordered triples = Lemma 7 count): 124 = 4 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,2}: 2 -> 3  {1,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot2(D2) rot3(D2) rot0(D2) rot1(D2)
+class Z = {{0}, {2}, {1,3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 558 ; /6 (unordered triples = Lemma 7 count): 93 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {0}: 3 -> 2  {2}: 3 -> 2  {1,3}: 2 -> 4   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D3) rot2(D1) rot0(D1)
+class Z = {{}, {1,2}, {0,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 186 ; /6 (unordered triples = Lemma 7 count): 31 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {1,2}: 2 -> 3  {0,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D4)
+class Z = {{1}, {0,2}, {3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 558 ; /6 (unordered triples = Lemma 7 count): 93 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {1}: 3 -> 2  {0,2}: 2 -> 4  {3}: 3 -> 2   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D3) rot3(D1) rot1(D1)
+(a) per ordered zero-set assignment (Z(u),Z(v)) [Z(u+v) determined]: count of ordered (u,v) pairs
+   Z(u)={} Z(v)={0,1} : 31 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,2} : 124 = 4 x (2^w-1)
+   Z(u)={} Z(v)={1,2} : 31 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,3} : 31 = 1 x (2^w-1)
+   Z(u)={} Z(v)={1,3} : 124 = 4 x (2^w-1)
+   Z(u)={} Z(v)={2,3} : 31 = 1 x (2^w-1)
+   Z(u)={0} Z(v)={2} : 93 = 3 x (2^w-1)
+   Z(u)={0} Z(v)={1,3} : 93 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={0,2} : 93 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={3} : 93 = 3 x (2^w-1)
+   Z(u)={0,1} Z(v)={} : 31 = 1 x (2^w-1)
+   Z(u)={0,1} Z(v)={2,3} : 31 = 1 x (2^w-1)
+   Z(u)={2} Z(v)={0} : 93 = 3 x (2^w-1)
+   Z(u)={2} Z(v)={1,3} : 93 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={} : 124 = 4 x (2^w-1)
+   Z(u)={0,2} Z(v)={1} : 93 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={3} : 93 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={1,3} : 124 = 4 x (2^w-1)
+   Z(u)={1,2} Z(v)={} : 31 = 1 x (2^w-1)
+   Z(u)={1,2} Z(v)={0,3} : 31 = 1 x (2^w-1)
+   Z(u)={3} Z(v)={1} : 93 = 3 x (2^w-1)
+   Z(u)={3} Z(v)={0,2} : 93 = 3 x (2^w-1)
+   Z(u)={0,3} Z(v)={} : 31 = 1 x (2^w-1)
+   Z(u)={0,3} Z(v)={1,2} : 31 = 1 x (2^w-1)
+   Z(u)={1,3} Z(v)={} : 124 = 4 x (2^w-1)
+   Z(u)={1,3} Z(v)={0} : 93 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={2} : 93 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={0,2} : 124 = 4 x (2^w-1)
+   Z(u)={2,3} Z(v)={} : 31 = 1 x (2^w-1)
+   Z(u)={2,3} Z(v)={0,1} : 31 = 1 x (2^w-1)
+   number of ordered zero-set assignments with solutions: 30
+RAW (no normalization) ordered (u,v) solutions: 2232 ; matches normalized x (2^w-1): YES
+search time: 0.02 s ; total time: 0.77 s
+
+wall 0.77 s, maxrss 1440 KB
+=== w=6 poly=0x43 mode=0 (exactly one zero per byte) ===
+field check: OK (every nonzero row of the mult table is a permutation)
+Table 2 dy=MC(dx), dy'=MC(dx') reproduced in this field: YES
+reference set (Table 2 rows x rot_k x 6 orderings, normalized, deduplicated): 72 ordered pairs
+normalized candidates tested: 19503666 ; normalized solutions (ordered (u,v), eta_first=1): 72
+=> ordered (u,v) solutions in total = 72 x (2^w-1) = 4536
+scalar-orbit check (every tau*(u,v) is a solution; orbit size 2^w-1): OK
+(i) solutions outside {tau*rot_k(row)} : 0 ; reference pairs not found by search: 0 ; set equality: YES
+number of classes Z(D): 5
+class Z = {{}, {0,1}, {2,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 378 ; /6 (unordered triples = Lemma 7 count): 63 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,1}: 2 -> 3  {2,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D4)
+class Z = {{}, {0,2}, {1,3}}
+   normalized ordered pairs: 24 ; ordered (u,v) pairs total: 1512 ; /6 (unordered triples = Lemma 7 count): 252 = 4 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,2}: 2 -> 3  {1,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot2(D2) rot3(D2) rot0(D2) rot1(D2)
+class Z = {{0}, {2}, {1,3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 1134 ; /6 (unordered triples = Lemma 7 count): 189 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {0}: 3 -> 2  {2}: 3 -> 2  {1,3}: 2 -> 4   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D3) rot0(D1) rot2(D1)
+class Z = {{}, {1,2}, {0,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 378 ; /6 (unordered triples = Lemma 7 count): 63 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {1,2}: 2 -> 3  {0,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D4)
+class Z = {{1}, {0,2}, {3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 1134 ; /6 (unordered triples = Lemma 7 count): 189 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {1}: 3 -> 2  {0,2}: 2 -> 4  {3}: 3 -> 2   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D3) rot3(D1) rot1(D1)
+(a) per ordered zero-set assignment (Z(u),Z(v)) [Z(u+v) determined]: count of ordered (u,v) pairs
+   Z(u)={} Z(v)={0,1} : 63 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,2} : 252 = 4 x (2^w-1)
+   Z(u)={} Z(v)={1,2} : 63 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,3} : 63 = 1 x (2^w-1)
+   Z(u)={} Z(v)={1,3} : 252 = 4 x (2^w-1)
+   Z(u)={} Z(v)={2,3} : 63 = 1 x (2^w-1)
+   Z(u)={0} Z(v)={2} : 189 = 3 x (2^w-1)
+   Z(u)={0} Z(v)={1,3} : 189 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={0,2} : 189 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={3} : 189 = 3 x (2^w-1)
+   Z(u)={0,1} Z(v)={} : 63 = 1 x (2^w-1)
+   Z(u)={0,1} Z(v)={2,3} : 63 = 1 x (2^w-1)
+   Z(u)={2} Z(v)={0} : 189 = 3 x (2^w-1)
+   Z(u)={2} Z(v)={1,3} : 189 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={} : 252 = 4 x (2^w-1)
+   Z(u)={0,2} Z(v)={1} : 189 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={3} : 189 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={1,3} : 252 = 4 x (2^w-1)
+   Z(u)={1,2} Z(v)={} : 63 = 1 x (2^w-1)
+   Z(u)={1,2} Z(v)={0,3} : 63 = 1 x (2^w-1)
+   Z(u)={3} Z(v)={1} : 189 = 3 x (2^w-1)
+   Z(u)={3} Z(v)={0,2} : 189 = 3 x (2^w-1)
+   Z(u)={0,3} Z(v)={} : 63 = 1 x (2^w-1)
+   Z(u)={0,3} Z(v)={1,2} : 63 = 1 x (2^w-1)
+   Z(u)={1,3} Z(v)={} : 252 = 4 x (2^w-1)
+   Z(u)={1,3} Z(v)={0} : 189 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={2} : 189 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={0,2} : 252 = 4 x (2^w-1)
+   Z(u)={2,3} Z(v)={} : 63 = 1 x (2^w-1)
+   Z(u)={2,3} Z(v)={0,1} : 63 = 1 x (2^w-1)
+   number of ordered zero-set assignments with solutions: 30
+RAW (no normalization) ordered (u,v) solutions: 4536 ; matches normalized x (2^w-1): YES
+search time: 0.16 s ; total time: 12.18 s
+
+wall 12.18 s, maxrss 1440 KB
+=== w=7 poly=0x83 mode=0 (exactly one zero per byte) ===
+field check: OK (every nonzero row of the mult table is a permutation)
+Table 2 dy=MC(dx), dy'=MC(dx') reproduced in this field: YES
+reference set (Table 2 rows x rot_k x 6 orderings, normalized, deduplicated): 72 ordered pairs
+normalized candidates tested: 159773874 ; normalized solutions (ordered (u,v), eta_first=1): 72
+=> ordered (u,v) solutions in total = 72 x (2^w-1) = 9144
+scalar-orbit check (every tau*(u,v) is a solution; orbit size 2^w-1): OK
+(i) solutions outside {tau*rot_k(row)} : 0 ; reference pairs not found by search: 0 ; set equality: YES
+number of classes Z(D): 5
+class Z = {{}, {0,1}, {2,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 762 ; /6 (unordered triples = Lemma 7 count): 127 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,1}: 2 -> 3  {2,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D4)
+class Z = {{}, {0,2}, {1,3}}
+   normalized ordered pairs: 24 ; ordered (u,v) pairs total: 3048 ; /6 (unordered triples = Lemma 7 count): 508 = 4 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,2}: 2 -> 3  {1,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot2(D2) rot3(D2) rot0(D2) rot1(D2)
+class Z = {{0}, {2}, {1,3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 2286 ; /6 (unordered triples = Lemma 7 count): 381 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {0}: 3 -> 2  {2}: 3 -> 2  {1,3}: 2 -> 4   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D3) rot0(D1) rot2(D1)
+class Z = {{}, {1,2}, {0,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 762 ; /6 (unordered triples = Lemma 7 count): 127 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {1,2}: 2 -> 3  {0,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D4)
+class Z = {{1}, {0,2}, {3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 2286 ; /6 (unordered triples = Lemma 7 count): 381 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {1}: 3 -> 2  {0,2}: 2 -> 4  {3}: 3 -> 2   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D3) rot3(D1) rot1(D1)
+(a) per ordered zero-set assignment (Z(u),Z(v)) [Z(u+v) determined]: count of ordered (u,v) pairs
+   Z(u)={} Z(v)={0,1} : 127 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,2} : 508 = 4 x (2^w-1)
+   Z(u)={} Z(v)={1,2} : 127 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,3} : 127 = 1 x (2^w-1)
+   Z(u)={} Z(v)={1,3} : 508 = 4 x (2^w-1)
+   Z(u)={} Z(v)={2,3} : 127 = 1 x (2^w-1)
+   Z(u)={0} Z(v)={2} : 381 = 3 x (2^w-1)
+   Z(u)={0} Z(v)={1,3} : 381 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={0,2} : 381 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={3} : 381 = 3 x (2^w-1)
+   Z(u)={0,1} Z(v)={} : 127 = 1 x (2^w-1)
+   Z(u)={0,1} Z(v)={2,3} : 127 = 1 x (2^w-1)
+   Z(u)={2} Z(v)={0} : 381 = 3 x (2^w-1)
+   Z(u)={2} Z(v)={1,3} : 381 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={} : 508 = 4 x (2^w-1)
+   Z(u)={0,2} Z(v)={1} : 381 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={3} : 381 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={1,3} : 508 = 4 x (2^w-1)
+   Z(u)={1,2} Z(v)={} : 127 = 1 x (2^w-1)
+   Z(u)={1,2} Z(v)={0,3} : 127 = 1 x (2^w-1)
+   Z(u)={3} Z(v)={1} : 381 = 3 x (2^w-1)
+   Z(u)={3} Z(v)={0,2} : 381 = 3 x (2^w-1)
+   Z(u)={0,3} Z(v)={} : 127 = 1 x (2^w-1)
+   Z(u)={0,3} Z(v)={1,2} : 127 = 1 x (2^w-1)
+   Z(u)={1,3} Z(v)={} : 508 = 4 x (2^w-1)
+   Z(u)={1,3} Z(v)={0} : 381 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={2} : 381 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={0,2} : 508 = 4 x (2^w-1)
+   Z(u)={2,3} Z(v)={} : 127 = 1 x (2^w-1)
+   Z(u)={2,3} Z(v)={0,1} : 127 = 1 x (2^w-1)
+   number of ordered zero-set assignments with solutions: 30
+search time: 1.23 s ; total time: 1.23 s
+
+wall 1.23 s, maxrss 1440 KB
+=== w=8 poly=0x11B mode=0 (exactly one zero per byte) ===
+field check: OK (every nonzero row of the mult table is a permutation)
+Table 2 dy=MC(dx), dy'=MC(dx') reproduced in this field: YES
+reference set (Table 2 rows x rot_k x 6 orderings, normalized, deduplicated): 72 ordered pairs
+normalized candidates tested: 1293347250 ; normalized solutions (ordered (u,v), eta_first=1): 72
+=> ordered (u,v) solutions in total = 72 x (2^w-1) = 18360
+scalar-orbit check (every tau*(u,v) is a solution; orbit size 2^w-1): OK
+(i) solutions outside {tau*rot_k(row)} : 0 ; reference pairs not found by search: 0 ; set equality: YES
+number of classes Z(D): 5
+class Z = {{}, {0,1}, {2,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 1530 ; /6 (unordered triples = Lemma 7 count): 255 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,1}: 2 -> 3  {2,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D4)
+class Z = {{}, {0,2}, {1,3}}
+   normalized ordered pairs: 24 ; ordered (u,v) pairs total: 6120 ; /6 (unordered triples = Lemma 7 count): 1020 = 4 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {0,2}: 2 -> 3  {1,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot2(D2) rot3(D2) rot0(D2) rot1(D2)
+class Z = {{0}, {2}, {1,3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 4590 ; /6 (unordered triples = Lemma 7 count): 765 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {0}: 3 -> 2  {2}: 3 -> 2  {1,3}: 2 -> 4   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot1(D3) rot0(D1) rot2(D1)
+class Z = {{}, {1,2}, {0,3}}
+   normalized ordered pairs: 6 ; ordered (u,v) pairs total: 1530 ; /6 (unordered triples = Lemma 7 count): 255 = 1 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {}: 4 -> 2  {1,2}: 2 -> 3  {0,3}: 2 -> 3   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D4)
+class Z = {{1}, {0,2}, {3}}
+   normalized ordered pairs: 18 ; ordered (u,v) pairs total: 4590 ; /6 (unordered triples = Lemma 7 count): 765 = 3 x (2^w-1)
+   three zero sets distinct: yes
+   (input zero set: wt_in -> wt_out of MC):  {1}: 3 -> 2  {0,2}: 2 -> 4  {3}: 3 -> 2   [constant within class: yes]
+   table-2 rotations in class (row D_r, rot_k; a rotation may appear under several labels if it equals another rotation up to reordering): rot0(D3) rot3(D1) rot1(D1)
+(a) per ordered zero-set assignment (Z(u),Z(v)) [Z(u+v) determined]: count of ordered (u,v) pairs
+   Z(u)={} Z(v)={0,1} : 255 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,2} : 1020 = 4 x (2^w-1)
+   Z(u)={} Z(v)={1,2} : 255 = 1 x (2^w-1)
+   Z(u)={} Z(v)={0,3} : 255 = 1 x (2^w-1)
+   Z(u)={} Z(v)={1,3} : 1020 = 4 x (2^w-1)
+   Z(u)={} Z(v)={2,3} : 255 = 1 x (2^w-1)
+   Z(u)={0} Z(v)={2} : 765 = 3 x (2^w-1)
+   Z(u)={0} Z(v)={1,3} : 765 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={0,2} : 765 = 3 x (2^w-1)
+   Z(u)={1} Z(v)={3} : 765 = 3 x (2^w-1)
+   Z(u)={0,1} Z(v)={} : 255 = 1 x (2^w-1)
+   Z(u)={0,1} Z(v)={2,3} : 255 = 1 x (2^w-1)
+   Z(u)={2} Z(v)={0} : 765 = 3 x (2^w-1)
+   Z(u)={2} Z(v)={1,3} : 765 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={} : 1020 = 4 x (2^w-1)
+   Z(u)={0,2} Z(v)={1} : 765 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={3} : 765 = 3 x (2^w-1)
+   Z(u)={0,2} Z(v)={1,3} : 1020 = 4 x (2^w-1)
+   Z(u)={1,2} Z(v)={} : 255 = 1 x (2^w-1)
+   Z(u)={1,2} Z(v)={0,3} : 255 = 1 x (2^w-1)
+   Z(u)={3} Z(v)={1} : 765 = 3 x (2^w-1)
+   Z(u)={3} Z(v)={0,2} : 765 = 3 x (2^w-1)
+   Z(u)={0,3} Z(v)={} : 255 = 1 x (2^w-1)
+   Z(u)={0,3} Z(v)={1,2} : 255 = 1 x (2^w-1)
+   Z(u)={1,3} Z(v)={} : 1020 = 4 x (2^w-1)
+   Z(u)={1,3} Z(v)={0} : 765 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={2} : 765 = 3 x (2^w-1)
+   Z(u)={1,3} Z(v)={0,2} : 1020 = 4 x (2^w-1)
+   Z(u)={2,3} Z(v)={} : 255 = 1 x (2^w-1)
+   Z(u)={2,3} Z(v)={0,1} : 255 = 1 x (2^w-1)
+   number of ordered zero-set assignments with solutions: 30
+search time: 9.61 s ; total time: 9.61 s
+
+wall 9.61 s, maxrss 1440 KB

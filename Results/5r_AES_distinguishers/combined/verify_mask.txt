@@ -1,0 +1,23 @@
+# cp_nz012 s0=30 s1=10 s2=10 N=3000(2^11.5507) rounds=5 trials=3 seed=11 t_start=0
+# Q_b=C(s0,2)*W=1.761750e+06 (2^20.7486)  W=4050 ; Q_a=Q_c=P2both*W (per trial)
+T 0 101 98 103 202 196 206 696 1968 432 56678
+V 0 fast_raw(a,b,c)=(202,196,206) brute_raw=(202,196,206) R1viol(a,b,c)=(0,0,0) ncand_brute=(1749600,1761750,1749600) ncand_formula=(1749600,1761750,1749600) id3: baseA*(s1-1)(s2-1)=56376 candC=56678 OK
+T 1 99 112 110 198 224 220 642 1949 434 56385
+V 1 fast_raw(a,b,c)=(198,224,220) brute_raw=(198,224,220) R1viol(a,b,c)=(0,0,0) ncand_brute=(1757700,1761750,1757700) ncand_formula=(1757700,1761750,1757700) id3: baseA*(s1-1)(s2-1)=52002 candC=56385 OK
+T 2 98 107 118 196 214 236 693 1886 433 54432
+V 2 fast_raw(a,b,c)=(196,214,236) brute_raw=(196,214,236) R1viol(a,b,c)=(0,0,0) ncand_brute=(1753650,1761750,1753650) ncand_formula=(1753650,1761750,1753650) id3: baseA*(s1-1)(s2-1)=56133 candC=54432 OK
+# P_find a=3 b=3 c=3 a|b=3 a|c=3 b|c=3 a|b|c=3 of 3  VERIFY_ALL_OK
+# cp_nz012 s0=30 s1=10 s2=10 N=3000(2^11.5507) rounds=4 trials=2 seed=12 t_start=0
+# Q_b=C(s0,2)*W=1.761750e+06 (2^20.7486)  W=4050 ; Q_a=Q_c=P2both*W (per trial)
+T 0 72 104 96 144 208 192 635 1870 433 53986
+V 0 fast_raw(a,b,c)=(144,208,192) brute_raw=(144,208,192) R1viol(a,b,c)=(0,0,0) ncand_brute=(1753650,1761750,1753650) ncand_formula=(1753650,1761750,1753650) id3: baseA*(s1-1)(s2-1)=51435 candC=53986 OK
+T 1 100 129 101 200 258 202 700 1952 430 55913
+V 1 fast_raw(a,b,c)=(200,258,202) brute_raw=(200,258,202) R1viol(a,b,c)=(0,0,0) ncand_brute=(1741500,1761750,1741500) ncand_formula=(1741500,1761750,1741500) id3: baseA*(s1-1)(s2-1)=56700 candC=55913 OK
+# P_find a=2 b=2 c=2 a|b=2 a|c=2 b|c=2 a|b|c=2 of 2  VERIFY_ALL_OK
+# cp_nz012 s0=40 s1=12 s2=12 N=5760(2^12.4919) rounds=5 trials=2 seed=13 t_start=0
+# Q_b=C(s0,2)*W=6.795360e+06 (2^22.6961)  W=8712 ; Q_a=Q_c=P2both*W (per trial)
+T 0 0 0 0 0 0 0 9 18 774 700
+V 0 fast_raw(a,b,c)=(0,0,0) brute_raw=(0,0,0) R1viol(a,b,c)=(0,0,0) ncand_brute=(6743088,6795360,6743088) ncand_formula=(6743088,6795360,6743088) id3: baseA*(s1-1)(s2-1)=1089 candC=700 OK
+T 1 0 0 0 0 0 0 6 23 769 884
+V 1 fast_raw(a,b,c)=(0,0,0) brute_raw=(0,0,0) R1viol(a,b,c)=(0,0,0) ncand_brute=(6699528,6795360,6699528) ncand_formula=(6699528,6795360,6699528) id3: baseA*(s1-1)(s2-1)=726 candC=884 OK
+# P_find a=0 b=0 c=0 a|b=0 a|c=0 b|c=0 a|b|c=0 of 2  VERIFY_ALL_OK

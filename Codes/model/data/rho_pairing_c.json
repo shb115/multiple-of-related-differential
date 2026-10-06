@@ -1,0 +1,19 @@
+{
+ "a": {
+  "n_bases": 1020,
+  "n_samples": 1000,
+  "rhobar": 0.9999406055501557,
+  "rhobar_se": 4.065910204001285e-06,
+  "first_term": 1019.9394176611588,
+  "first_term_se": 0.00414722840808131
+ },
+ "c": {
+  "n_bases": 1020,
+  "n_samples": 1000,
+  "rhobar": 0.9999404543287482,
+  "rhobar_se": 4.0659574249011146e-06,
+  "first_term": 1019.9392634153232,
+  "first_term_se": 0.004147276573399137
+ },
+ "note": "Results/expected_count/table5_w8.json (Table 5) gives rhobar(1)=0.9999414188 (SE 4.1e-6), first term 1019.9402 for pairing a; uniform-model rho for m=3 (Results/expected_count/table3_w8.json, Table 3) is 0.9999384866 = 1-2^-13.989"
+}

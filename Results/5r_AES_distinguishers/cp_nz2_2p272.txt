@@ -1,0 +1,3 @@
+AES n_z=2: s0=12418 s1=12418 N=154206724(2^27.20) rounds=5 trials=300
+  P_find=5/300=0.0167 mean=1.0967
+ALL_DONE

@@ -1,0 +1,24 @@
+Config: n_z=1, Tests=1000, StructureSize=65536, Rounds=5, Seed=42
+
+--- 5-Round Frequency Results (n_z=1) ---
+Count 0        :  146 times
+Count 8        :   10 times
+Count 32       :  305 times
+Count 40       :   22 times
+Count 48       :    2 times
+Count 64       :  247 times
+Count 72       :   12 times
+Count 96       :  128 times
+Count 104      :    8 times
+Count 128      :   65 times
+Count 136      :    7 times
+Count 160      :   28 times
+Count 192      :    8 times
+Count 200      :    1 times
+Count 224      :    4 times
+Count 232      :    1 times
+Count 256      :    3 times
+Count 288      :    2 times
+Count 320      :    1 times
+
+(Total: 1000 trials)

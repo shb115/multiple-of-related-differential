@@ -1,0 +1,7 @@
+AES cp_nz01: s0=11664 s1=108 s2=108 N=136048896(2^27.02) rounds=5 trials=300
+  n_z=0: P_find=171/300=0.5700 mean=0.8400
+  n_z=1: P_find=159/300=0.5300 mean=0.9300
+  [diag] base-coll/trial : n0=723.4  n1=734.7
+  [diag] checks/trial    : n0=8.437e+06 n1=8.412e+06
+  [diag] partner rate RV/checks : n0=1.991e-07 (2^-22.26)  n1=2.211e-07 (2^-22.11)
+ALL_DONE

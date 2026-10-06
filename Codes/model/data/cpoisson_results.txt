@@ -1,0 +1,168 @@
+====================================================================================================
+(i)-(iv)  inclusion probability q
+====================================================================================================
+product grid S0xS1xS2 = (11664, 108, 108) N=2^27.0196  q = s0(s0-1)/(2^16(2^16-1)) * s1(s1-1)/(256*255) * s2(s2-1)/(256*255) = 9.925658e-04 = 2^-9.9765  [(N/2^32)^2 = 2^-9.9609]  -- same q for pairings a, b, c (each candidate uses 2 {0,10} values, 2 byte-5 values, 2 byte-15 values)
+product grid S0xS1xS2 = (12515, 111, 111) N=2^27.2002  q = s0(s0-1)/(2^16(2^16-1)) * s1(s1-1)/(256*255) * s2(s2-1)/(256*255) = 1.275689e-03 = 2^-9.6145  [(N/2^32)^2 = 2^-9.5996]  -- same q for pairings a, b, c (each candidate uses 2 {0,10} values, 2 byte-5 values, 2 byte-15 values)
+A0xA1 grid s=11664 N=2^27.0196  q = [s(s-1)/(2^16(2^16-1))]^2 = 1.003250e-03 = 2^-9.9611
+A0xA1 grid s=12417 N=2^27.2001  q = [s(s-1)/(2^16(2^16-1))]^2 = 1.288517e-03 = 2^-9.6001
+A0xA1 grid s=12418 N=2^27.2003  q = [s(s-1)/(2^16(2^16-1))]^2 = 1.288933e-03 = 2^-9.5996
+ACP base structure (one fresh coset, all 2^16 values of the base-active bytes, every partner queried):
+  per member q = 2/2^16 = 2^-15 (a member is found iff one of its two pairs lies in the slice);
+  n_z=1: the 512 members of a bundle use 1024 distinct (byte5,byte15) values (checked on 40 bundles), so the members are mutually exclusive and h = 1024/2^16 = 2^-6 exactly (independent thinning would give 1-e^{-1/64} = 0.015504)
+  n_z=0: the 4 members use 8 distinct (byte0,byte10) values, h = 8/2^16 = 2^-13 exactly
+  per base structure: L = mu_b h + eps 2^-15;   2^5 structures in distinct cosets: Lambda = 32 L
+
+constants (AES, Table 5, data/table5_w8.json):
+  n_z=2 k=65536 T1=1036.5466 eps=0.9845 mu_b=T1/k=0.015816  eps_m={2: 9.2e-05, 3: 0.015201, 4: 0.969174}
+  n_z=1 k=512 T1=1019.9402 eps=0.9845 mu_b=T1/k=1.992071  eps_m={3: 0.01544, 4: 0.969024}
+  n_z=0 k=4 T1=765.0000 eps=0.9922 mu_b=T1/k=191.249998  eps_m={3: 0.015562, 4: 0.976624}
+  pairing c (n_z=1 on {5,15}): rhobar = 0.999940 +- 0.000004 -> T1 = 1019.939 (pairing a recomputed: 0.999941 +- 0.000004, T1 1019.939; Table 5: 1019.940)
+  n_z=2: lambda = 4/(2^8-1)^3 = 2^-21.98; a candidate is valid with probability 2^-30 lambda rhobar = 2^-62 x 2^10.04 (Section 4.1)
+  n_z=1: lambda = 4/(2^8-1)^3 = 2^-21.98; a candidate is valid with probability 2^-30 lambda rhobar = 2^-62 x 2^10.02 (Section 4.1)
+  n_z=0: lambda = 3/(2^8-1)^3 = 2^-22.40; a candidate is valid with probability 2^-30 lambda rhobar = 2^-62 x 2^9.60 (Section 4.1)
+  n_z=2: mean rho over the base pairs = 1.0000012 (weights {2: 384030, 3: 65295300, 4: 4162570275} of the base-pair differences at X2 from data/eps_split.json, rho_m of Table 3 from data/table3_w8.json; the 1020 base pairs with m = 1, a fraction 2.4e-07, have no Table 3 entry and are left out) (Section 4.1)
+  n_z=1: mean rho over the base pairs = 0.9999997 (weights {3: 1020, 4: 64005} of the base-pair differences at X2 from data/eps_split.json, rho_m of Table 3 from data/table3_w8.json) (Section 4.1)
+  n_z=0: mean rho over the base pairs = 0.9999997 (weights {3: 1020, 4: 64005} of the base-pair differences at X2 from data/eps_split.json, rho_m of Table 3 from data/table3_w8.json) (Section 4.1)
+
+====================================================================================================
+(2) Table 12 (Section 4.2): CP, one structure, 300 trials
+====================================================================================================
+n_z   grid               log2N     mean_pr  mean_ms  | P_cpois P_geom  Poisson | P_meas  SE     | z_cp   z_Poi 
+2     (11664, 11664)     27.0196   1.0409   0.9233   | 0.0167  0.0167  0.6469  | 0.0133  0.0066 |  -0.45 -22.96
+2     (12418, 12418)     27.2003   1.3373   1.0967   | 0.0169  0.0169  0.7374  | 0.0167  0.0074 |  -0.03 -28.37
+1     (11664, 108, 108)  27.0196   1.0133   0.9300   | 0.5483  0.5476  0.6370  | 0.5300  0.0288 |  -0.64  -3.85
+1     (12515, 111, 111)  27.2002   1.3024   1.3100   | 0.6158  0.6154  0.7281  | 0.6367  0.0278 |  +0.74  -3.56
+0     (11664, 108, 108)  27.0196   0.7603   0.8400   | 0.5318  0.5298  0.5325  | 0.5700  0.0286 |  +1.33  +1.30
+0     (12515, 111, 111)  27.2002   0.9772   1.0133   | 0.6227  0.6230  0.6236  | 0.6467  0.0276 |  +0.86  +0.82
+  (P_cpois: compound-Poisson model of Section 4.2 with h = 1-e^{-kq}; P_geom: h from the exact bundle geometry on the product grid (n_z=2 on the A0 x A1 grid has no geometry entry, so P_geom = P_cpois there);
+   z against the model/Poisson value with the binomial SE of the prediction; E[members present | bundle hit] = kq/(1-e^{-kq}) = 65.75, 84.47, 1.28, 1.36, 1.00, 1.00)
+
+Yan et al.'s CP (A0 x A1, s = 2^13.6, 1000 trials, 614 successes):
+  s=12417 N=2^27.2001 q=2^-9.6001 kq=0.6597 mean=1.3155  P_cpois=0.6184 P_geom=0.6188 Poisson=0.7317 | meas 0.614 (SE 0.0154) z_cp=-0.29 z_Poisson=-8.40
+  s=12418 N=2^27.2003 q=2^-9.5996 kq=0.6599 mean=1.3159  P_cpois=0.6185 P_geom=0.6188 Poisson=0.7318 | meas 0.614 (SE 0.0154) z_cp=-0.29 z_Poisson=-8.41
+  Yan grid: n_z=1 reaches 1-1/e = 63.2% at N = 2^27.238 (compound Poisson); Poisson would give 2^27.002
+
+====================================================================================================
+(2b) Table 14 (Section 5.2): ACP at 2^23.32 (and the unreported 2^22 block), 300 trials
+====================================================================================================
+n_z  log2D  | P_cpois  Poi@mean mean_pr  | P_meas   mean_ms  SE     z     
+2    22.00  | 0.0018   0.0020   0.0020   | 0.0000   0.0000   0.0000  -0.74
+1    22.00  | 0.3313   0.3293   0.3995   | 0.3200   0.3967   0.0269  -0.42
+0    22.00  | 0.2587   0.2575   0.2977   | 0.2400   0.2633   0.0247  -0.74
+2    23.32  | 0.0084   0.0120   0.0121   | 0.0067   0.0067   0.0047  -0.33
+1    23.32  | 0.6363   0.6335   1.0038   | 0.5933   0.9533   0.0284  -1.55
+0    23.32  | 0.5289   0.5269   0.7484   | 0.5033   0.6933   0.0289  -0.89
+  (n_z=1,0: budget-limited procedure of acp_all.c simulated; n_z=2: M = D - D^2/2^30 i.i.d. 4-active plaintexts of one coset,
+   q = 2 p^2 - p^4 with p = 1-(1-2^-32)^M; at 2^23.32: kq = 0.762, h = 0.533)
+   n_z=2 at 2^23.32: M = 2^23.306 sampled plaintexts, D^2/2^30 = 2^16.64 queries reserved for adaptive swaps, expected swaps 2^16.59 (Section 5.2)
+  Section 5.1 budget, n_z=0: 85.0 base collisions, about 2 per base structure, need 42.5 = 2^5.41 base structures (2^21.41 plaintexts); 85.0 x (2^8-1)^2 x 2 = 2^23.40 partner queries; total 2^23.72
+
+Yan et al.'s ACP (fixed number of base structures in distinct cosets, all (2^8-1)^2 partners queried):
+   32.00 structures (data 2^23.304): P_cpois = 0.6310  mean 0.9970  | measured 0.633 (SE 0.0108, 2000 trials) z = +0.18
+   53.82 structures (data 2^24.054): P_cpois = 0.8130  mean 1.6767  | measured 0.825 (SE 0.0085, 2000 trials) z = +1.37
+   53.00 structures (data 2^24.032): P_cpois = 0.8082  mean 1.6513  | measured 0.825 (SE 0.0085, 2000 trials) z = +1.91
+   54.00 structures (data 2^24.059): P_cpois = 0.8141  mean 1.6824  | measured 0.825 (SE 0.0085, 2000 trials) z = +1.26
+  n_z=0 with 32 structures: P_cpois = 0.5267 (mean 0.7480)
+  n_z=1 with all 32 base structures in ONE coset of D_0: h = 0.3959 per bundle, P_find = 0.5460 (distinct cosets: see above)
+  n_z=1 with all 54 base structures in ONE coset of D_0: h = 0.5729 per bundle, P_find = 0.6811 (distinct cosets: see above)
+
+====================================================================================================
+(3) Var(N_q) = k T1 + sum_m g_m eps_m  (~ k T1 + 8 eps) over a full structure
+====================================================================================================
+w=4 n_z=2 n=1000  kT1=   19382.7  case2: split 27.0 / 8eps 6.2   SD model 139.3 (8eps: 139.2)  SD meas 143.1 +- 6.1  (z +0.61) | Pr[N>=1] model 0.3113 (bundles only 0.2560) meas 0.3020 +- 0.0145
+w=4 n_z=1 n=1000  kT1=    1888.6  case2: split 17.2 / 8eps 6.1   SD model 43.7 (8eps: 43.5)  SD meas 46.8 +- 1.6  (z +1.93) | Pr[N>=1] model 0.8532 (bundles only 0.8419) meas 0.8540 +- 0.0112
+w=4 n_z=0 n=1000  kT1=     180.2  case2: split 19.6 / 8eps 6.9   SD model 14.1 (8eps: 13.7)  SD meas 15.5 +- 1.0  (z +1.29) | Pr[N>=1] model 1.0000 (bundles only 1.0000) meas 1.0000 +- 0.0000
+w=8 n_z=2 n= 700  kT1=67931116.6  case2: split 35.4 / 8eps 7.9   SD model 8242.0 (8eps: 8242.0)  SD meas 6045.8 +- 1272.4  (z -1.73) | Pr[N>=1] model 0.1280 (bundles only 0.0157) meas 0.1043 +- 0.0116
+w=8 n_z=1 n= 700  kT1=  522209.4  case2: split 23.6 / 8eps 7.9   SD model 722.7 (8eps: 722.6)  SD meas 752.5 +- 22.5  (z +1.32) | Pr[N>=1] model 0.8792 (bundles only 0.8636) meas 0.8857 +- 0.0120
+w=8 n_z=0 n= 700  kT1=    3060.0  case2: split 23.7 / 8eps 7.9   SD model 55.5 (8eps: 55.4)  SD meas 56.8 +- 1.5  (z +0.83) | Pr[N>=1] model 1.0000 (bundles only 1.0000) meas 1.0000 +- 0.0000
+bundle-count dispersion: AES n_z=1 floor(N/512): mean 2.087 (mu_b 1.992), var 2.160, index 1.035 (Poisson 1, SE ~ 0.053); residues mod 512: [0, 8, 16, 24]
+                         small-AES n_z=2 floor(N/256): mean 0.285 (mu_b 0.296), var 0.312, index 1.095 (SE ~ 0.045)
+bundles in the 700 AES structures (Section 3.4.2): n_z=1 1461 (expected 700 mu_b = 1394.4), n_z=2 6 (expected 11.1)
+
+====================================================================================================
+(4) Table 13 (Section 4.3) model columns: product-grid configurations of the pairings a (n_z=1 on {0,10}, Yan et al.), b (n_z=0), c (n_z=1 on {5,15}) and their unions
+====================================================================================================
+grid rule: s1 = s2 = round(256 (N/2^32)^{1/4}), s0 = round(N / s1^2) for N = 2^26.05, 2^26.33, 2^26.71, 2^27.6, 2^27.8, 2^28.0, 2^28.3; 2^27.02 and 2^27.20 are the grids of Table 12
+N        grid               log2q    | P_a (geom)     P_b (geom)     P_c (geom)     | a|b     a|c     b|c     a|b|c   | typeI abc
+2^26.05  (8390, 91, 91)     -11.921  | 0.2186 (  -   ) 0.1792 (  -   ) 0.2186 (  -   ) | 0.3587 0.3895 0.3587 0.4989 | 2^-10.355
+         means: a 0.2633  b 0.1976 ; Poisson P: a 0.2315  b 0.1793 ; type-I per pairing: a 2^-11.943  b 2^-11.932  c 2^-11.943 ; ciphertext memory 1.11 GB
+2^26.33  (9153, 96, 96)     -11.359  | 0.2975 (  -   ) 0.2528 (  -   ) 0.2975 (  -   ) | 0.4751 0.5065 0.4751 0.6313 | 2^-9.794
+         means: a 0.3886  b 0.2916 ; Poisson P: a 0.3220  b 0.2529 ; type-I per pairing: a 2^-11.382  b 2^-11.370  c 2^-11.382 ; ciphertext memory 1.35 GB
+2^26.71  (10551, 102, 102)  -10.597  | 0.4295 (  -   ) 0.3897 (  -   ) 0.4295 (  -   ) | 0.6518 0.6745 0.6518 0.8014 | 2^-9.033
+         means: a 0.6590  b 0.4944 ; Poisson P: a 0.4826  b 0.3901 ; type-I per pairing: a 2^-10.620  b 2^-10.609  c 2^-10.620 ; ciphertext memory 1.76 GB
+2^27.02  (11664, 108, 108)  -9.977   | 0.5483 (0.5476) 0.5318 (0.5298) 0.5483 (0.5478) | 0.7885 0.7959 0.7885 0.9044 | 2^-8.413
+         means: a 1.0133  b 0.7603 ; Poisson P: a 0.6370  b 0.5325 ; type-I per pairing: a 2^-9.999  b 2^-9.988  c 2^-9.999 ; ciphertext memory 2.18 GB
+2^27.20  (12515, 111, 111)  -9.615   | 0.6158 (0.6154) 0.6227 (0.6230) 0.6158 (0.6152) | 0.8550 0.8524 0.8550 0.9443 | 2^-8.051
+         means: a 1.3024  b 0.9772 ; Poisson P: a 0.7281  b 0.6236 ; type-I per pairing: a 2^-9.637  b 2^-9.626  c 2^-9.637 ; ciphertext memory 2.47 GB
+2^27.60  (14366, 119, 119)  -8.813   | 0.7423 (0.7420) 0.8165 (0.8158) 0.7423 (0.7419) | 0.9527 0.9336 0.9527 0.9878 | 2^-7.252
+         means: a 2.2698  b 1.7030 ; Poisson P: a 0.8967  b 0.8179 ; type-I per pairing: a 2^-8.836  b 2^-8.824  c 2^-8.836 ; ciphertext memory 3.25 GB
+2^27.80  (15198, 124, 124)  -8.412   | 0.7881 (0.7877) 0.8930 (0.8932) 0.7881 (0.7877) | 0.9773 0.9551 0.9773 0.9952 | 2^-6.852
+         means: a 2.9969  b 2.2486 ; Poisson P: a 0.9501  b 0.8945 ; type-I per pairing: a 2^-8.435  b 2^-8.423  c 2^-8.435 ; ciphertext memory 3.74 GB
+2^28.00  (16384, 128, 128)  -8.011   | 0.8213 (0.8211) 0.9474 (0.9481) 0.8213 (0.8211) | 0.9906 0.9681 0.9906 0.9983 | 2^-6.454
+         means: a 3.9566  b 2.9686 ; Poisson P: a 0.9809  b 0.9486 ; type-I per pairing: a 2^-8.034  b 2^-8.023  c 2^-8.034 ; ciphertext memory 4.29 GB
+2^28.30  (18133, 135, 135)  -7.410   | 0.8503 (0.8503) 0.9883 (0.9881) 0.8503 (0.8503) | 0.9983 0.9776 0.9983 0.9997 | 2^-5.857
+         means: a 6.0017  b 4.5030 ; Poisson P: a 0.9975  b 0.9889 ; type-I per pairing: a 2^-7.433  b 2^-7.422  c 2^-7.433 ; ciphertext memory 5.29 GB
+
+data N (proportional grid, one structure) for a target P_find:
+  a          0.500: 2^26.894 | 0.632: 2^27.246 | 0.800: 2^27.864 | 0.850: 2^28.294 | 0.900: unreachable (max 0.8791) | 0.950: unreachable (max 0.8791)   [P at 2^32 = 0.8791]
+  b          0.500: 2^26.954 | 0.632: 2^27.219 | 0.800: 2^27.562 | 0.850: 2^27.681 | 0.900: 2^27.821 | 0.950: 2^28.012   [P at 2^32 = 1.0000]
+  a|c        0.500: 2^26.315 | 0.632: 2^26.612 | 0.800: 2^27.031 | 0.850: 2^27.192 | 0.900: 2^27.399 | 0.950: 2^27.743   [P at 2^32 = 0.9854]
+  a|b        0.500: 2^26.385 | 0.632: 2^26.668 | 0.800: 2^27.049 | 0.850: 2^27.185 | 0.900: 2^27.350 | 0.950: 2^27.583   [P at 2^32 = 1.0000]
+  a|b|c      0.500: 2^26.052 | 0.632: 2^26.332 | 0.800: 2^26.706 | 0.850: 2^26.841 | 0.900: 2^27.003 | 0.950: 2^27.233   [P at 2^32 = 1.0000]
+  a Poisson  0.500: 2^26.746 | 0.632: 2^27.010 | 0.800: 2^27.353 | 0.850: 2^27.471 | 0.900: 2^27.610 | 0.950: 2^27.800   [P at 2^32 = 1.0000]
+
+====================================================================================================
+(4b) Table 13 (Section 4.3): model vs measured, 300 trials per size
+====================================================================================================
+measured: Results/5r_AES_distinguishers/combined, read by Codes/tools/aggregate_combined.py (hits / 300);
+model: section (4); z = (meas - model) / sqrt(model (1 - model) / 300), the binomial SE of the prediction;
+false positive = 1 - exp(-4 (Q_a + Q_b + Q_c) / 2^64) for the union; time = N_s + 4 N_s / 5 = 1.8 N_s encryptions.
+columns in the order of Table 13: a = n_z=1 on {0,10} (Yan et al.), c = n_z=1 on {5,15}, b = n_z=0, union a|b|c
+N_s      grid               | a meas (model) z      | c meas (model) z      | b meas (model) z      | union meas (model) z  | false pos time    
+2^26.05  (8390, 91, 91)     | 0.2233 (0.2186) +0.20 | 0.2433 (0.2186) +1.04 | 0.1800 (0.1792) +0.04 | 0.5200 (0.4989) +0.73 | 2^-10.355 2^26.898
+         both succeed: a&c 18, a&b 12, b&c 11 ; under independence of the measured marginals 16.3, 12.1, 13.1
+2^26.33  (9153, 96, 96)     | 0.3000 (0.2975) +0.09 | 0.3400 (0.2975) +1.61 | 0.2633 (0.2528) +0.42 | 0.6500 (0.6313) +0.67 | 2^-9.794  2^27.178
+         both succeed: a&c 29, a&b 27, b&c 27 ; under independence of the measured marginals 30.6, 23.7, 26.9
+2^26.71  (10551, 102, 102)  | 0.4700 (0.4295) +1.42 | 0.4300 (0.4295) +0.02 | 0.3433 (0.3897) -1.65 | 0.8033 (0.8014) +0.09 | 2^-9.033  2^27.558
+         both succeed: a&c 63, a&b 52, b&c 42 ; under independence of the measured marginals 60.6, 48.4, 44.3
+2^27.02  (11664, 108, 108)  | 0.5300 (0.5483) -0.64 | 0.5667 (0.5483) +0.64 | 0.5700 (0.5318) +1.33 | 0.9100 (0.9044) +0.33 | 2^-8.413  2^27.868
+         both succeed: a&c 93, a&b 100, b&c 89 ; under independence of the measured marginals 90.1, 90.6, 96.9
+2^27.20  (12515, 111, 111)  | 0.6367 (0.6158) +0.74 | 0.6267 (0.6158) +0.39 | 0.6467 (0.6227) +0.86 | 0.9567 (0.9443) +0.93 | 2^-8.051  2^28.048
+         both succeed: a&c 123, a&b 121, b&c 122 ; under independence of the measured marginals 119.7, 123.5, 121.6
+2^27.60  (14366, 119, 119)  | 0.7733 (0.7423) +1.23 | 0.7333 (0.7423) -0.36 | 0.8633 (0.8165) +2.10 | 0.9867 (0.9878) -0.18 | 2^-7.252  2^28.448
+         both succeed: a&c 174, a&b 204, b&c 192 ; under independence of the measured marginals 170.1, 200.3, 189.9
+2^27.80  (15198, 124, 124)  | 0.8100 (0.7881) +0.93 | 0.7900 (0.7881) +0.08 | 0.9333 (0.8930) +2.26 | 0.9967 (0.9952) +0.37 | 2^-6.852  2^28.648
+         both succeed: a&c 196, a&b 226, b&c 223 ; under independence of the measured marginals 192.0, 226.8, 221.2
+2^28.00  (16384, 128, 128)  | 0.8333 (0.8213) +0.55 | 0.8133 (0.8213) -0.36 | 0.9367 (0.9474) -0.84 | 1.0000 (0.9983) +0.71 | 2^-6.454  2^28.848
+         both succeed: a&c 203, a&b 235, b&c 226 ; under independence of the measured marginals 203.3, 234.2, 228.5
+2^28.30  (18133, 135, 135)  | 0.8633 (0.8503) +0.63 | 0.8433 (0.8503) -0.34 | 0.9833 (0.9883) -0.80 | 1.0000 (0.9997) +0.28 | 2^-5.857  2^29.148
+         both succeed: a&c 221, a&b 254, b&c 248 ; under independence of the measured marginals 218.4, 254.7, 248.8
+largest |z|: 2^27.02 .. 2^28.30: n_z=1 (a, c) 1.23, n_z=0 (b) 2.26, union 0.93 ; 2^26.05 .. 2^26.71: a, c, b 1.65, with the union 1.65
+10 rounds (r10_s2720, (12515, 111, 111), N = 2^27.20): union hits 0/300 ; expected false positives 300 x 2^-8.051 = 1.13
+
+====================================================================================================
+(5) saturation of n_z=1 in one full diagonal structure
+====================================================================================================
+  AES:       1 - exp(-mu_b - sum eps_m/g_m) = 1 - exp(-1.9921 - 0.1211) = 0.8792 ; bundles only 1 - e^{-1.9921} = 0.8636 ; measured 0.8857 +- 0.0120 (700 structures)
+  small-AES: 0.8532 (bundles only 0.8419) ; measured 0.8540 +- 0.0112 (1000 structures)
+
+====================================================================================================
+(6) ACP n_z=2 data requirement
+====================================================================================================
+  one structure of 2^26.5 random 4-active plaintexts of one coset: q = 2^-10.000, kq = 64.0, mean = 1.0130, P_find = 0.0166 ; data incl. the 8.26e+06 adaptive swap queries = 2^26.620
+  bundles alone cap the single-coset success at 1 - e^{-mu_b} = 0.0157; a FULL coset (2^32) also catches the Case-2 groups of 8: P = 0.1280 (Table 10: 0.104)
+    single coset, M = 2^27.0: P_find = 0.0176 (bundle part 0.0158), data 2^27.167
+    single coset, M = 2^28.0: P_find = 0.0229 (bundle part 0.0158), data 2^28.317
+    single coset, M = 2^29.0: P_find = 0.0416 (bundle part 0.0158), data 2^29.577
+    single coset, M = 2^30.0: P_find = 0.0870 (bundle part 0.0158), data 2^30.989
+    single coset, M = 2^31.0: P_find = 0.1248 (bundle part 0.0158), data 2^32.570
+  ACP, many cosets, target 0.500: total data 2^29.617 with 61.6 cosets of M = 2^23.65 sampled plaintexts (+ swaps)
+  CP  (A0xA1 grid per coset), target 0.500: total data 2^30.100 with 61.2 structures of 2^24.16
+  ACP, many cosets, target 0.632: total data 2^30.145 with 88.8 cosets of M = 2^23.65 sampled plaintexts (+ swaps)
+  CP  (A0xA1 grid per coset), target 0.632: total data 2^30.628 with 88.2 structures of 2^24.16
+  ACP, many cosets, target 0.800: total data 2^30.832 with 143.0 cosets of M = 2^23.65 sampled plaintexts (+ swaps)
+  CP  (A0xA1 grid per coset), target 0.800: total data 2^31.315 with 142.0 structures of 2^24.16
+  ACP, many cosets, target 0.900: total data 2^31.349 with 204.6 cosets of M = 2^23.65 sampled plaintexts (+ swaps)
+  CP  (A0xA1 grid per coset), target 0.900: total data 2^31.832 with 203.2 structures of 2^24.16
+  at the optimum M = 2^23.655 (the same for every target): q = 1.892e-05, 2^16 q = 1.240, h = 1 - e^{-2^16 q} = 0.711, per-structure L = mu_b h + sum_m (eps_m/g_m)(1 - e^{-g_m q}) = 0.01126 = 1/88.84
+  CP with repeated 2^27.02 structures (distinct cosets): P per structure 0.0167, 59.5 structures = 2^32.92 for 63.2%
